@@ -1,7 +1,121 @@
 fileFormatVersion: 2
 guid: a9d91f47df5b2e645a50180bfd8729dd
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8722152418105608363
+    second: zombieWalk_0
+  - first:
+      213: -2462833951194984246
+    second: zombieWalk_1
+  - first:
+      213: -3667964977928451755
+    second: zombieWalk_2
+  - first:
+      213: 2394805982091163961
+    second: zombieWalk_3
+  - first:
+      213: 7308663783215535319
+    second: zombieWalk_4
+  - first:
+      213: -8060768416758962695
+    second: zombieWalk_5
+  - first:
+      213: 4853381087234732642
+    second: zombieWalk_6
+  - first:
+      213: 5859105620879611855
+    second: zombieWalk_7
+  - first:
+      213: 8195716168454138363
+    second: zombieWalk_8
+  - first:
+      213: -9075083854914769992
+    second: zombieWalk_9
+  - first:
+      213: 1983486669479851357
+    second: zombieWalk_10
+  - first:
+      213: -6803065913285251007
+    second: zombieWalk_11
+  - first:
+      213: -1052421213055806648
+    second: zombieWalk_12
+  - first:
+      213: -1973476630886186115
+    second: zombieWalk_13
+  - first:
+      213: 1478608225786423831
+    second: zombieWalk_14
+  - first:
+      213: -3411929632296165988
+    second: zombieWalk_15
+  - first:
+      213: -1682143509670095694
+    second: zombieWalk_16
+  - first:
+      213: -4329356083503930839
+    second: zombieWalk_17
+  - first:
+      213: 7704265580918417521
+    second: zombieWalk_18
+  - first:
+      213: -5845107275665378939
+    second: zombieWalk_19
+  - first:
+      213: -8190705405584402904
+    second: zombieWalk_20
+  - first:
+      213: 8076724942012545772
+    second: zombieWalk_21
+  - first:
+      213: 6391577407575541813
+    second: zombieWalk_22
+  - first:
+      213: 4811137608230625742
+    second: zombieWalk_23
+  - first:
+      213: 8805103378718450191
+    second: zombieWalk_24
+  - first:
+      213: -6481636525711649136
+    second: zombieWalk_25
+  - first:
+      213: 7435701120857579028
+    second: zombieWalk_26
+  - first:
+      213: -1917438057551760463
+    second: zombieWalk_27
+  - first:
+      213: -2696730136523897786
+    second: zombieWalk_28
+  - first:
+      213: 613148463813381833
+    second: zombieWalk_29
+  - first:
+      213: 505979605829482649
+    second: zombieWalk_30
+  - first:
+      213: 7605047673607923430
+    second: zombieWalk_31
+  - first:
+      213: -7411182294042048439
+    second: zombieWalk_32
+  - first:
+      213: -4045475770101946174
+    second: zombieWalk_33
+  - first:
+      213: -8228096445414145374
+    second: zombieWalk_34
+  - first:
+      213: -4032552537890235881
+    second: zombieWalk_35
+  - first:
+      213: 7697885701695130677
+    second: zombieWalk_36
+  - first:
+      213: -451053775202162518
+    second: zombieWalk_37
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +155,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -89,7 +203,805 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: zombieWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2232
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55730027690b4f680800000000000000
+      internalID: -8722152418105608363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 2232
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0504ee19142ddd0800000000000000
+      internalID: -2462833951194984246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_2
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 2232
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559400a4945c81dc0800000000000000
+      internalID: -3667964977928451755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_3
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 2232
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939368c3a5f0c3120800000000000000
+      internalID: 2394805982091163961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1984
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d41355ecf69d6560800000000000000
+      internalID: 7308663783215535319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1984
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5e46e25d5622090800000000000000
+      internalID: -8060768416758962695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_6
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1984
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 262b930726caa5340800000000000000
+      internalID: 4853381087234732642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_7
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1984
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc71602f489bf4150800000000000000
+      internalID: 5859105620879611855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1736
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf962a4be680db170800000000000000
+      internalID: 8195716168454138363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_9
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1736
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb2ce8d053de0280800000000000000
+      internalID: -9075083854914769992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_10
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1736
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55b11fed92c68b10800000000000000
+      internalID: 1983486669479851357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_11
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1736
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14070179897a691a0800000000000000
+      internalID: -6803065913285251007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1488
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84319b19b7c0561f0800000000000000
+      internalID: -1052421213055806648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_13
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1488
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d738e7bc57dcc94e0800000000000000
+      internalID: -1973476630886186115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_14
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1488
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a68fbe852158410800000000000000
+      internalID: 1478608225786423831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_15
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1488
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d9b5c931466a0d0800000000000000
+      internalID: -3411929632296165988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1240
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b492ece363d7a8e0800000000000000
+      internalID: -1682143509670095694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_17
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1240
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922629874990be3c0800000000000000
+      internalID: -4329356083503930839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_18
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1240
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17829e51abc0bea60800000000000000
+      internalID: 7704265580918417521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_19
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1240
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581f9e7c6e102eea0800000000000000
+      internalID: -5845107275665378939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 992
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 826154074d4c45e80800000000000000
+      internalID: -8190705405584402904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_21
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 992
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceaf13dda8a461070800000000000000
+      internalID: 8076724942012545772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_22
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 992
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538c3f4c9c173b850800000000000000
+      internalID: 6391577407575541813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_23
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 992
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1eb180a2894c240800000000000000
+      internalID: 4811137608230625742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 744
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02ea1b1fd2023a70800000000000000
+      internalID: 8805103378718450191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_25
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 744
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09692c9cbe99c06a0800000000000000
+      internalID: -6481636525711649136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_26
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 744
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e90bcf5cae03760800000000000000
+      internalID: 7435701120857579028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_27
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 744
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3ffc4ee34e365e0800000000000000
+      internalID: -1917438057551760463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 496
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644076d8a3a439ad0800000000000000
+      internalID: -2696730136523897786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_29
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 496
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce4c2c7747528800800000000000000
+      internalID: 613148463813381833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_30
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 496
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998fe0d45c9950700800000000000000
+      internalID: 505979605829482649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_31
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 496
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6af4dd09e8a8960800000000000000
+      internalID: 7605047673607923430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94885fd38f0362990800000000000000
+      internalID: -7411182294042048439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_33
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 248
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8af9f88359bd7c0800000000000000
+      internalID: -4045475770101946174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_34
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 248
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a28f6190edefcd80800000000000000
+      internalID: -8228096445414145374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_35
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 248
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ad3f805de7908c0800000000000000
+      internalID: -4032552537890235881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53cc813b24264da60800000000000000
+      internalID: 7697885701695130677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieWalk_37
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 0
+        width: 163
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8e9723bf88db9f0800000000000000
+      internalID: -451053775202162518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
