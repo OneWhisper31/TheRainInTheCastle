@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemies : MonoBehaviour
+public class Tower : MonoBehaviour
 {
-    public Animator animator;
-    public EnemiesSO SO;
+    // Start is called before the first frame update
     void Start()
     {
         
-        animator = GetComponent<Animator>(); //por que no asiga?
     }
+
+    // Update is called once per frame
     void Update()
     {
         
