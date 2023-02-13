@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6198845373050404183}
   - component: {fileID: 5380761748133159995}
   m_Layer: 0
-  m_Name: Archer
+  m_Name: Arquero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 7954712276114835055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2011967, y: 0.24576917, z: 0.2457692}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 371.19095, y: -124.7978}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1.7, y: 1.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6198845373050404183
 CanvasRenderer:

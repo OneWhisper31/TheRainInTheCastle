@@ -9,11 +9,24 @@ public class GridButton : MonoBehaviour
 
     public GameplayGrid gameplayGrid;
 
+    public Color usedColor;
+
+    public bool used;
+
+    Image image;
+
     public void OnClick()
     {
+        if (used)
+            return;
 
         gameplayGrid.OnClick(transform);
 
-        GetComponent<Button>().interactable=false;
+        if (image == null)
+            image = GetComponent<Image>();
+        image.color = Color.Lerp(image.color, usedColor,0.5f);
+
+        used = !used;
+
     }
 }
