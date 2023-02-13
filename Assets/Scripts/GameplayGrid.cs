@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameplayGrid : MonoBehaviour
 {
-    [SerializeField]int currency;
+    CurrencyManager currencyManager;
 
     public int xSize, ySize;
     public GameObject gridButtonPrefab;
@@ -23,6 +23,7 @@ public class GameplayGrid : MonoBehaviour
     {
         CreateNewGrid();
 
+        currencyManager = GetComponent<CurrencyManager>();
         buildings = new Buildings(cultivo, arquero, piromano, expertos);
     }
     void CreateNewGrid()
@@ -68,10 +69,14 @@ public class GameplayGrid : MonoBehaviour
     {
         var cost = BuildingCost();
 
-        if (currency >= cost)
+        if (currencyManager.Currency >= cost)
         {
-            currency -= cost;
-            Instantiate(PrefabSelected(), _transform.position, _transform.rotation, _transform);
+            currencyManager.Currency -= cost;
+            var obj = Instantiate(PrefabSelected(), _transform.position, _transform.rotation, _transform);
+
+            if (buildings.buildingSelected == TypeOfBuildings.Cultivo)
+                obj.GetComponent<Cultivo>().currencyManager = currencyManager;
+
             return true;
         }
         else
