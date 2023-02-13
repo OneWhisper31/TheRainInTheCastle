@@ -11,7 +11,7 @@ public class GameplayGrid : MonoBehaviour
 
     [Header("Prefab Tropas")]
     public GameObject cultivo;
-    public GameObject arquero, piromano, torre;
+    public GameObject arquero, piromano, expertos;
 
     //encargado de almacenar los prefabs etiquetados segun su tipo
     Buildings buildings;
@@ -23,7 +23,7 @@ public class GameplayGrid : MonoBehaviour
     {
         CreateNewGrid();
 
-        buildings = new Buildings(cultivo, arquero, piromano, torre);
+        buildings = new Buildings(cultivo, arquero, piromano, expertos);
     }
     void CreateNewGrid()
     {
@@ -64,7 +64,7 @@ public class GameplayGrid : MonoBehaviour
         return array;
     }
 
-    public void OnClick(Transform _transform)
+    public bool OnClick(Transform _transform)
     {
         var cost = BuildingCost();
 
@@ -72,10 +72,12 @@ public class GameplayGrid : MonoBehaviour
         {
             currency -= cost;
             Instantiate(PrefabSelected(), _transform.position, _transform.rotation, _transform);
+            return true;
         }
         else
         {
             //sonido de rechazo
+            return false;
         }
     }
 
@@ -100,7 +102,7 @@ public enum TypeOfBuildings
     Cultivo,
     Arquero,
     Piromano,
-    Torre,
+    Expertos,
     Vacio
 }
 public class Buildings
@@ -110,15 +112,15 @@ public class Buildings
     public Dictionary<TypeOfBuildings, GameObject> list = new Dictionary<TypeOfBuildings, GameObject>();
     public Dictionary<TypeOfBuildings, int> cost = new Dictionary<TypeOfBuildings, int>();
 
-    public Buildings(GameObject Cultivo, GameObject Arquero, GameObject Piromano, GameObject Torre)
+    public Buildings(GameObject Cultivo, GameObject Arquero, GameObject Piromano, GameObject Expertos)
     {
         list.Add(TypeOfBuildings.Cultivo, Cultivo);
         list.Add(TypeOfBuildings.Arquero, Arquero);
         list.Add(TypeOfBuildings.Piromano, Piromano);
-        list.Add(TypeOfBuildings.Torre, Torre);
+        list.Add(TypeOfBuildings.Expertos, Expertos);
         cost.Add(TypeOfBuildings.Cultivo, 20);
         cost.Add(TypeOfBuildings.Arquero, 50);
         cost.Add(TypeOfBuildings.Piromano, 40);
-        cost.Add(TypeOfBuildings.Torre, 100);
+        cost.Add(TypeOfBuildings.Expertos, 100);
     }
 }

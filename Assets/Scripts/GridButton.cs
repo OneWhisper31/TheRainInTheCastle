@@ -20,13 +20,12 @@ public class GridButton : MonoBehaviour
         if (used)
             return;
 
-        gameplayGrid.OnClick(transform);
-
-        if (image == null)
-            image = GetComponent<Image>();
-        image.color = Color.Lerp(image.color, usedColor,0.5f);
-
-        used = !used;
-
+        if (gameplayGrid.OnClick(transform))//return true si se ejecuto
+        {
+            if (image == null)
+                image = GetComponent<Image>();
+            image.color = Color.Lerp(image.color, usedColor, 0.5f);
+            used = !used;
+        }
     }
 }

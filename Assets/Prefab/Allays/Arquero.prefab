@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6859385665712276448}
   - component: {fileID: 6198845373050404183}
   - component: {fileID: 5380761748133159995}
+  - component: {fileID: -3769374126658675877}
   m_Layer: 0
   m_Name: Arquero
   m_TagString: Untagged
@@ -34,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 371.19095, y: -124.7978}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1.7, y: 1.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6198845373050404183
@@ -75,3 +76,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &-3769374126658675877
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7954712276114835055}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86dead119f0cc654e883553ce45b01ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
