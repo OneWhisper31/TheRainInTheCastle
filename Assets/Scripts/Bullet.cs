@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //capaz cambiar cuando instancias
-    public int damage;
+    //cambias cuando instancias
+    [HideInInspector]public int damage = 5;
 
     [SerializeField] float velocity=10;
     Rigidbody2D rb;

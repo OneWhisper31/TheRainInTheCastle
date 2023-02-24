@@ -13,6 +13,7 @@ public class AllaysShootSystem : MonoBehaviour
     public GameObject bulletPrefab;
 
     [SerializeField] float cooldown;
+    [SerializeField] int bulletDamage;
     float currentCooldown;
 
     void Update()
@@ -25,9 +26,10 @@ public class AllaysShootSystem : MonoBehaviour
 
         if (Physics2D.Raycast(transform.position + plantMinDistance * transform.right, transform.right, plantMaxDistance, enemyMask))
         {
-            Instantiate(bulletPrefab,transform.position,Quaternion.Euler(Vector3.zero));
-
+            var obj = Instantiate(bulletPrefab,transform.position,Quaternion.Euler(Vector3.zero));
+            obj.GetComponent<Bullet>().damage = bulletDamage;
             currentCooldown = cooldown;
+
             //encontrar la forma que las distancias minimas no peguen los proyectiles
                 //(a lo mejor agregar un cooldown donde el proyectil no haga daño)
         }

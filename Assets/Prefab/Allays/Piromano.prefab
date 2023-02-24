@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6198845373050404183}
   - component: {fileID: 5380761748133159995}
   - component: {fileID: 8949959915874961293}
+  - component: {fileID: 301710983867608404}
   m_Layer: 0
   m_Name: Piromano
   m_TagString: Untagged
@@ -95,3 +96,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &301710983867608404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7954712276114835055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05018882711712f45a04e6820d46d61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantMaxDistance: 6
+  plantMinDistance: 0
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
+  bulletPrefab: {fileID: 8737159611443208520, guid: ec13c123222be5d4dbb2067fcde0cb91, type: 3}
+  cooldown: 0.5
+  bulletDamage: 5

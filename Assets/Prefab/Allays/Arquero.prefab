@@ -115,3 +115,4 @@ MonoBehaviour:
     m_Bits: 64
   bulletPrefab: {fileID: 8737159611443208520, guid: ec13c123222be5d4dbb2067fcde0cb91, type: 3}
   cooldown: 2
+  bulletDamage: 5
