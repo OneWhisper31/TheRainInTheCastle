@@ -2,28 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyStates{Walk, Atk, Death}
+
 public class BdeathEnemy : Enemies
 {
-    // Start is called before the first frame update
+    private FSM _FSM;
+
     void Start()
     {
-        
+        _FSM = new FSM();
+        _FSM.AddState(EnemyStates.Walk, new DeathWalk(_FSM, this));
+        _FSM.AddState(EnemyStates.Atk, new DeathAtk(_FSM, this));
+        _FSM.AddState(EnemyStates.Death, new DeathDead(_FSM, this));
+        _FSM.ChangeState(EnemyStates.Walk);
+
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        transform.position += SO.velocity * Time.deltaTime;
+        _FSM.Update();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Tower>() != null)
         {
             //atacar
         }
     }
-
-    //Caminata
-    
 }
