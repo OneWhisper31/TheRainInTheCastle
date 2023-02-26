@@ -15,4 +15,21 @@ public class PlayerHealth : Health
     {
         base.OnDeadHandler();
     }
+
+    private void Reset()
+    {
+        health = originalHealth;
+    }
+
+    public static void TurnOn(PlayerHealth b)
+    {
+        b.Reset();
+        b.gameObject.SetActive(true);
+    }
+
+    public static void TurnOff(PlayerHealth b)
+    {
+        b.gameObject.SetActive(false);
+        b.transform.SetParent(null);
+    }
 }

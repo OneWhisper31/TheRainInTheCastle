@@ -15,4 +15,20 @@ public class EnemyHealth : Health
     {
         base.OnDeadHandler();
     }
+
+    private void Reset()
+    {
+        health = originalHealth;
+    }
+
+    public static void TurnOn(EnemyHealth b)
+    {
+        b.gameObject.SetActive(true);
+        b.Reset();
+    }
+
+    public static void TurnOff(EnemyHealth b)
+    {
+        b.gameObject.SetActive(false);
+    }
 }

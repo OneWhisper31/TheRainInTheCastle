@@ -4,11 +4,20 @@ using UnityEngine;
 
 public abstract class Health : MonoBehaviour
 {
+    public TypesOfEntitys typeOfEntity;
+
     [SerializeField] protected int health;
 
-    [SerializeField]Animator anim;
+    [SerializeField] protected int originalHealth;
+
+    //[SerializeField]Animator anim;
 
     public int _Health { get{ return health; } }
+
+    private void Start()
+    {
+        originalHealth = health;
+    }
 
     public virtual void OnHitHandler(int damageDealt)
     {
@@ -19,8 +28,8 @@ public abstract class Health : MonoBehaviour
     }
     protected virtual void OnDeadHandler()
     {
-        anim.SetTrigger("isDead");
+        //anim.SetTrigger("isDead");
         Debug.Log("Perdio " + gameObject.name);
-        Destroy(this.gameObject);
+        EntityFactory.Instance.ReturnEntity(typeOfEntity,this);//pool
     }
 }

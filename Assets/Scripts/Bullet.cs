@@ -10,11 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float velocity=10;
     Rigidbody2D rb;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.right * velocity;
-    }
+    [SerializeField]float lifetime=15;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -25,6 +21,33 @@ public class Bullet : MonoBehaviour
         {
             otherHealthSystem.OnHitHandler(damage);
         }
-        Destroy(this.gameObject);//pool
+        BulletFactory.Instance.ReturnBullet(this);//pool
+    }
+
+    private void Update()
+    {
+        lifetime -= Time.deltaTime;
+
+        if(lifetime<=0)
+            BulletFactory.Instance.ReturnBullet(this);//pool
+    }
+
+    private void Reset()
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+
+        rb.velocity = Vector2.right * velocity;
+    }
+
+    public static void TurnOn(Bullet b)
+    {
+        b.gameObject.SetActive(true);
+        b.Reset();
+    }
+
+    public static void TurnOff(Bullet b)
+    {
+        b.gameObject.SetActive(false);
     }
 }

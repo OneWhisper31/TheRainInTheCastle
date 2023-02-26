@@ -237,5 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6facdbe31f0a9af4f814dcd107fabddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeOfEntity: 5
   health: 20
-  anim: {fileID: 1630914197200922676}
+  originalHealth: 20

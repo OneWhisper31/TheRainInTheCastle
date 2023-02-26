@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2574140069300485935}
   - component: {fileID: 2496435378165874767}
   - component: {fileID: 5841904871151951490}
+  - component: {fileID: 5739783286789374754}
   m_Layer: 0
   m_Name: Expertos
   m_TagString: Untagged
@@ -109,10 +110,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantMaxDistance: 20
-  plantMinDistance: 8
+  plantMinDistance: 3
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
   bulletPrefab: {fileID: 8737159611443208520, guid: ec13c123222be5d4dbb2067fcde0cb91, type: 3}
-  cooldown: 4
-  bulletDamage: 12
+  cooldown: 7
+  bulletDamage: 20
+--- !u!114 &5739783286789374754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536403513509289339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fae98038b2d2084cb2d6d4a2d7c7656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfEntity: 4
+  health: 20
+  originalHealth: 20

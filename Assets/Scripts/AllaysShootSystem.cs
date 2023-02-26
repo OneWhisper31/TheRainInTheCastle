@@ -26,12 +26,11 @@ public class AllaysShootSystem : MonoBehaviour
 
         if (Physics2D.Raycast(transform.position + plantMinDistance * transform.right, transform.right, plantMaxDistance, enemyMask))
         {
-            var obj = Instantiate(bulletPrefab,transform.position,Quaternion.Euler(Vector3.zero));
+            var obj = BulletFactory.Instance.pool.GetObject();
+            obj.transform.position=transform.position;
+
             obj.GetComponent<Bullet>().damage = bulletDamage;
             currentCooldown = cooldown;
-
-            //encontrar la forma que las distancias minimas no peguen los proyectiles
-                //(a lo mejor agregar un cooldown donde el proyectil no haga daño)
         }
     }
 }

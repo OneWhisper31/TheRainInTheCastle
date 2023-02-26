@@ -17,7 +17,7 @@ public class GameplayGrid : MonoBehaviour
     Buildings buildings;
 
 
-    Dictionary<int[], TypeOfBuildings> grid = new Dictionary<int[], TypeOfBuildings>();//int[x,y]cords type que tiene
+    Dictionary<int[], TypesOfEntitys> grid = new Dictionary<int[], TypesOfEntitys>();//int[x,y]cords type que tiene
 
     public void Start()
     {
@@ -39,13 +39,13 @@ public class GameplayGrid : MonoBehaviour
             }
         }
     }
-    void Add(int x, int y, TypeOfBuildings type=TypeOfBuildings.Vacio)
+    void Add(int x, int y, TypesOfEntitys type =TypesOfEntitys.Vacio)
     {
         int[] array = GetCoords(x, y);
 
         grid.Add(array, type);
     }
-    public void AddBuilding(int x, int y, TypeOfBuildings type)
+    public void AddBuilding(int x, int y, TypesOfEntitys type)
     {
         int[] array = GetCoords(x, y);
 
@@ -55,7 +55,7 @@ public class GameplayGrid : MonoBehaviour
     {
         int[] array = GetCoords(x, y);
 
-        grid[array] = TypeOfBuildings.Vacio;
+        grid[array] = TypesOfEntitys.Vacio;
     }
     public int[] GetCoords(int x, int y)
     {
@@ -72,9 +72,34 @@ public class GameplayGrid : MonoBehaviour
         if (currencyManager.Currency >= cost)
         {
             currencyManager.Currency -= cost;
-            var obj = Instantiate(PrefabSelected(), _transform.position, _transform.rotation, _transform);
 
-            if (buildings.buildingSelected == TypeOfBuildings.Cultivo)
+            PlayerHealth obj = default;
+
+            //pool
+            switch (buildings.buildingSelected)
+            {
+                case TypesOfEntitys.Cultivo:
+                    obj = EntityFactory.Instance.poolCultivo.GetObject();
+                    break;
+                case TypesOfEntitys.Arquero:
+                    obj = EntityFactory.Instance.poolArquero.GetObject();
+                    break;
+                case TypesOfEntitys.Piromano:
+                    obj = EntityFactory.Instance.poolPiromano.GetObject();
+                    break;
+                case TypesOfEntitys.Experto:
+                    obj = EntityFactory.Instance.poolExperto.GetObject();
+                    break;
+                default:
+                    break;
+            }
+
+            obj.transform.position = _transform.position;
+            obj.transform.rotation = _transform.rotation;
+            obj.transform.SetParent(_transform.parent);
+            //var obj = Instantiate(PrefabSelected(), _transform.position, _transform.rotation, _transform);
+
+            if (buildings.buildingSelected == TypesOfEntitys.Cultivo)
                 obj.GetComponent<Cultivo>().currencyManager = currencyManager;
 
             return true;
@@ -88,7 +113,7 @@ public class GameplayGrid : MonoBehaviour
 
     public void ChangeSelected(int type)// segun el orden del enum
     {//busca en el diccionario el prefab segun la llave elegida
-        buildings.buildingSelected = (TypeOfBuildings)type;
+        buildings.buildingSelected = (TypesOfEntitys)type;
     }
 
     public int BuildingCost()
@@ -101,31 +126,22 @@ public class GameplayGrid : MonoBehaviour
         return buildings.list[buildings.buildingSelected];
     }
 }
-
-public enum TypeOfBuildings
-{
-    Cultivo,
-    Arquero,
-    Piromano,
-    Expertos,
-    Vacio
-}
 public class Buildings
 {
-    public TypeOfBuildings buildingSelected;
+    public TypesOfEntitys buildingSelected;
 
-    public Dictionary<TypeOfBuildings, GameObject> list = new Dictionary<TypeOfBuildings, GameObject>();
-    public Dictionary<TypeOfBuildings, int> cost = new Dictionary<TypeOfBuildings, int>();
+    public Dictionary<TypesOfEntitys, GameObject> list = new Dictionary<TypesOfEntitys, GameObject>();
+    public Dictionary<TypesOfEntitys, int> cost = new Dictionary<TypesOfEntitys, int>();
 
     public Buildings(GameObject Cultivo, GameObject Arquero, GameObject Piromano, GameObject Expertos)
     {
-        list.Add(TypeOfBuildings.Cultivo, Cultivo);
-        list.Add(TypeOfBuildings.Arquero, Arquero);
-        list.Add(TypeOfBuildings.Piromano, Piromano);
-        list.Add(TypeOfBuildings.Expertos, Expertos);
-        cost.Add(TypeOfBuildings.Cultivo, 20);
-        cost.Add(TypeOfBuildings.Arquero, 50);
-        cost.Add(TypeOfBuildings.Piromano, 40);
-        cost.Add(TypeOfBuildings.Expertos, 100);
+        list.Add(TypesOfEntitys.Cultivo, Cultivo);
+        list.Add(TypesOfEntitys.Arquero, Arquero);
+        list.Add(TypesOfEntitys.Piromano, Piromano);
+        list.Add(TypesOfEntitys.Experto, Expertos);
+        cost.Add(TypesOfEntitys.Cultivo, 20);
+        cost.Add(TypesOfEntitys.Arquero, 50);
+        cost.Add(TypesOfEntitys.Piromano, 40);
+        cost.Add(TypesOfEntitys.Experto, 100);
     }
 }

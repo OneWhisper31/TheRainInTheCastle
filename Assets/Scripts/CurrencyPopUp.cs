@@ -17,15 +17,28 @@ public class CurrencyPopUp : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void Start()
-    {
-        StartCoroutine(Dissapear());
-    }
     IEnumerator Dissapear()
     {
         yield return new WaitForSeconds(15f);
-        Destroy(this.gameObject);
+        PopupFactory.Instance.ReturnPopUp(this);
 
         yield break;
+    }
+
+    private void Reset()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Dissapear());
+    }
+
+    public static void TurnOn(CurrencyPopUp b)
+    {
+        b.gameObject.SetActive(true);
+        b.Reset();
+    }
+
+    public static void TurnOff(CurrencyPopUp b)
+    {
+        b.gameObject.SetActive(false);
     }
 }
