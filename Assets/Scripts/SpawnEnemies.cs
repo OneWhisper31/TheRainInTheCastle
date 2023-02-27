@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemies : MonoBehaviour
+public class SpawnEnemies : MonoBehaviour, IScreen
 {
     [SerializeField] Enemies[] enemy;
     [SerializeField] int dificult;
@@ -10,6 +10,7 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] int[] timeBetweenEnemies;
     [SerializeField] GameObject[] spawnsOfEnemies = new GameObject[5];
     float time;
+    bool IsActive;
 
 
 
@@ -17,15 +18,24 @@ public class SpawnEnemies : MonoBehaviour
     void Start()
     {
         dificult = 1;
-
-
+        AddToListEntitySM();
+        IsActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnOnLevel();
-        time += Time.deltaTime;
+        if(IsActive)
+        {
+            SpawnOnLevel();
+            time += Time.deltaTime;
+        }
+    }
+
+    public void AddToListEntitySM() //Sumo la entidad al primer push
+    {
+        SMEntity._entityList.Add(this);
+        Debug.Log("Sumo a la lista y hay " + SMEntity._entityList.Count);
     }
 
     public void SpawnOnLevel()
@@ -64,5 +74,20 @@ public class SpawnEnemies : MonoBehaviour
 
             //Instantiate(enemy[Random.Range(0, enemy.Length)], spawnsOfEnemies[Random.Range(0, 5)].transform.position, transform.rotation);
         }
+    }
+
+    public void Activate()
+    {
+        IsActive = true;
+    }
+
+    public void Deactivate()
+    {
+        IsActive = false;  
+    }
+
+    public void Free()
+    {
+        return;
     }
 }

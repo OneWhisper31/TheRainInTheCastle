@@ -16,7 +16,7 @@ public class BdeathEnemy : Enemies, IScreen
         _FSM.AddState(EnemyStates.Death, new DeathDead(_FSM, this));
         _FSM.AddState(EnemyStates.Pause, new EnemyPause(_FSM, this, anim));
         _FSM.ChangeState(EnemyStates.Walk);
-        SumarmeAListaEntitySM();
+        AddToListEntitySM();
 
     }
 
@@ -34,7 +34,7 @@ public class BdeathEnemy : Enemies, IScreen
         }
     }
 
-    public void SumarmeAListaEntitySM()
+    public void AddToListEntitySM() //Sumo la entidad al primer push
     {
         SMEntity._entityList.Add(this);
         Debug.Log("Sumo a la lista y hay "+ SMEntity._entityList.Count);

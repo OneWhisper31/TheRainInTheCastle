@@ -18,7 +18,7 @@ public class SMEntity : MonoBehaviour, IScreen
 
     public void Activate()
     {
-        foreach (var item in _entityList)
+        foreach (var item in _entityList) // Activo todo lo de la lista Enemigos, Aliados, Ballas y tiempo de juego
         {
             item.Activate();
         }
