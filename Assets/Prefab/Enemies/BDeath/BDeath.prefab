@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1630914197200922676}
   SO: {fileID: 11400000, guid: e814aa4dccd44e1469fca52f5cdbd977, type: 2}
+  anim: {fileID: 1630914197200922676}
 --- !u!50 &5040128501676178648
 Rigidbody2D:
   serializedVersion: 4
