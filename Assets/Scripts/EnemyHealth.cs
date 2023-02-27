@@ -18,7 +18,20 @@ public class EnemyHealth : Health
 
     private void Reset()
     {
-        health = originalHealth;
+        switch (typeOfEntity)
+        {
+            case TypesOfEntitys.Zombie:
+                health=FlyweightPointer.zombieHealth.originalHealth;
+                break;
+            case TypesOfEntitys.Kamikaze:
+                health = FlyweightPointer.kamikazeHealth.originalHealth;
+                break;
+            case TypesOfEntitys.Blindado:
+                health = FlyweightPointer.blindadoHealth.originalHealth;
+                break;
+            default:
+                break;
+        }
     }
 
     public static void TurnOn(EnemyHealth b)

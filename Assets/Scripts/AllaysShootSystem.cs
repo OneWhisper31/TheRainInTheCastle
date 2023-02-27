@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class AllaysShootSystem : MonoBehaviour
 {
-    //distancia maxima donde el allay puede tirar
-    [SerializeField] float plantMaxDistance=12;
-    //distancia donde por cercania el allay deja de tirar
-    [SerializeField] float plantMinDistance=0;
-
     [SerializeField] LayerMask enemyMask;
     public GameObject bulletPrefab;
 
-    [SerializeField] float cooldown;
-    [SerializeField] int bulletDamage;
     float currentCooldown;
+    FlyweightAllays allay;
+
+    private void Start()
+    {
+
+        switch (GetComponent<PlayerHealth>().typeOfEntity)
+        {
+            case TypesOfEntitys.Arquero:
+                allay = FlyweightPointer.arquero;
+                break;
+            case TypesOfEntitys.Piromano:
+                allay = FlyweightPointer.piromano;
+                break;
+            case TypesOfEntitys.Experto:
+                allay = FlyweightPointer.experto;
+                break;
+            default:
+                break;
+        }
+
+    }
 
     void Update()
     {
@@ -23,14 +37,15 @@ public class AllaysShootSystem : MonoBehaviour
             currentCooldown -= Time.deltaTime;
             return;
         }
+        
 
-        if (Physics2D.Raycast(transform.position + plantMinDistance * transform.right, transform.right, plantMaxDistance, enemyMask))
+        if (Physics2D.Raycast(transform.position + allay.allayMinDistance * transform.right, transform.right, allay.allayMaxDistance, enemyMask))
         {
             var obj = BulletFactory.Instance.pool.GetObject();
             obj.transform.position=transform.position;
 
-            obj.GetComponent<Bullet>().damage = bulletDamage;
-            currentCooldown = cooldown;
+            obj.GetComponent<Bullet>().damage = allay.bulletDamage;
+            currentCooldown = allay.cooldown;
         }
     }
 }

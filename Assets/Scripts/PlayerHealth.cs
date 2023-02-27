@@ -18,7 +18,21 @@ public class PlayerHealth : Health
 
     private void Reset()
     {
-        health = originalHealth;
+        switch (typeOfEntity)
+        {
+            case TypesOfEntitys.Cultivo:
+                health = FlyweightPointer.cultivoHealth.originalHealth;
+                break;
+            case TypesOfEntitys.Arquero:
+                health = FlyweightPointer.arqueroHealth.originalHealth;
+                break;
+            case TypesOfEntitys.Piromano:
+                health = FlyweightPointer.piromanoHealth.originalHealth;
+                break;
+            case TypesOfEntitys.Experto:
+                health = FlyweightPointer.expertoHealth.originalHealth;
+                break;
+        }
     }
 
     public static void TurnOn(PlayerHealth b)

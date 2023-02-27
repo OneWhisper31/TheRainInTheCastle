@@ -8,7 +8,7 @@ public abstract class Health : MonoBehaviour
 
     [SerializeField] protected int health;
 
-    [SerializeField] protected int originalHealth;
+    //[SerializeField] protected int originalHealth;
 
     //[SerializeField]Animator anim;
 
@@ -16,7 +16,34 @@ public abstract class Health : MonoBehaviour
 
     private void Start()
     {
-        originalHealth = health;
+        switch (typeOfEntity)
+        {
+            case TypesOfEntitys.Vacio:
+                break;
+            case TypesOfEntitys.Cultivo:
+                FlyweightPointer.cultivoHealth.originalHealth = health;
+                break;
+            case TypesOfEntitys.Arquero:
+                FlyweightPointer.arqueroHealth.originalHealth = health;
+                break;
+            case TypesOfEntitys.Piromano:
+                FlyweightPointer.piromanoHealth.originalHealth = health;
+                break;
+            case TypesOfEntitys.Experto:
+                FlyweightPointer.expertoHealth.originalHealth = health;
+                break;
+            case TypesOfEntitys.Zombie:
+                FlyweightPointer.zombieHealth.originalHealth = health;
+                break;
+            case TypesOfEntitys.Kamikaze:
+                FlyweightPointer.kamikazeHealth.originalHealth = health;
+                break;
+            case TypesOfEntitys.Blindado:
+                FlyweightPointer.blindadoHealth.originalHealth = health;
+                break;
+            default:
+                break;
+        }
     }
 
     public virtual void OnHitHandler(int damageDealt)

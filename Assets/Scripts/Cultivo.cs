@@ -22,9 +22,6 @@ public class Cultivo : MonoBehaviour
             obj.transform.rotation = Quaternion.Euler(Vector3.zero);
             obj.transform.SetParent(transform);
 
-            //var obj =Instantiate(popupPrefab,transform.position+new Vector3(Random.Range(-1,1.1f), Random.Range(-1, 1.1f),0),
-            //Quaternion.Euler(Vector3.zero), transform);
-
             obj.GetComponent<CurrencyPopUp>().currencyManager = currencyManager;
         }
     }
