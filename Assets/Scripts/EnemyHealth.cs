@@ -13,6 +13,10 @@ public class EnemyHealth : Health
 
     protected override void OnDeadHandler()
     {
+        if (typeOfEntity == TypesOfEntitys.Blindado)
+        {
+            //dividir
+        }
         base.OnDeadHandler();
     }
 

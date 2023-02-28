@@ -7,6 +7,8 @@ public class DeathAtk : IState
     FSM _FSM;
     BdeathEnemy _enemy;
     float cooldown, currentCooldown;
+
+    TypesOfEntitys _type;
     int damage;
 
     PlayerHealth playerHealth { get { return _enemy.allay; } }
@@ -16,6 +18,8 @@ public class DeathAtk : IState
         _FSM = fsm;
         _enemy = enemy;
         cooldown = _cooldown;
+
+        _type = type;
 
         switch (type)//daño
         {
@@ -48,6 +52,8 @@ public class DeathAtk : IState
         {
             currentCooldown = cooldown;
             playerHealth.OnHitHandler(damage);
+            if (_type == TypesOfEntitys.Kamikaze)
+                _enemy.GetComponent<EnemyHealth>().OnHitHandler((int)Mathf.Floor(Mathf.Infinity));//suicidio
         }
         else
             currentCooldown -= Time.deltaTime;

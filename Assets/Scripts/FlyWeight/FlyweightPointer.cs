@@ -34,7 +34,7 @@ public class FlyweightPointer : MonoBehaviour
     public static readonly FlyweightEnemies kamikaze = new FlyweightEnemies
     {
         velocity = 2.5f,
-        damage = 20
+        damage = (int)Mathf.Floor(Mathf.Infinity)
     };
     public static readonly FlyweightEnemies blindado = new FlyweightEnemies
     {
