@@ -68,6 +68,8 @@ public class BdeathEnemy : Enemies, IScreen
 
     public void Free()
     {
-        Destroy(this);
+        EnemyHealth health = GetComponent<EnemyHealth>();
+        EntityFactory.Instance.ReturnEntity(health.typeOfEntity, health);
+        //Destroy(this);
     }
 }

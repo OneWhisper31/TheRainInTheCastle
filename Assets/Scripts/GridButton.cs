@@ -10,22 +10,33 @@ public class GridButton : MonoBehaviour
     public GameplayGrid gameplayGrid;
 
     public Color usedColor;
+    Color unusedColor;
 
-    public bool used;
+    bool used;
 
     Image image;
+
+    private void Start()
+    {
+        unusedColor = GetComponent<Image>().color;
+    }
 
     public void OnClick()
     {
         if (used)
             return;
 
-        if (gameplayGrid.OnClick(transform))//return true si se ejecuto
+        if (gameplayGrid.OnClick(this))//return true si se ejecuto
         {
             if (image == null)
                 image = GetComponent<Image>();
-            image.color = Color.Lerp(image.color, usedColor, 0.5f);
+            image.color = usedColor;
             used = !used;
         }
+    }
+    public void OnDeadAllay()
+    {
+        image.color = unusedColor;
+        used = false;
     }
 }

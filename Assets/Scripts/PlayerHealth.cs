@@ -6,6 +6,8 @@ public class PlayerHealth : Health
 {
     public int playerHealth {set { health = value; }}
 
+    [HideInInspector]public GridButton button;
+
     public override void OnHitHandler(int damageDealt)
     {
         base.OnHitHandler(damageDealt);
@@ -13,6 +15,7 @@ public class PlayerHealth : Health
 
     protected override void OnDeadHandler()
     {
+        button.OnDeadAllay();
         base.OnDeadHandler();
     }
 
@@ -43,7 +46,13 @@ public class PlayerHealth : Health
 
     public static void TurnOff(PlayerHealth b)
     {
-        b.gameObject.SetActive(false);
+        b.button = null;
         b.transform.SetParent(null);
+        b.gameObject.SetActive(false);
+    }
+
+    protected override Prototype Clone()//desactivado ya que no se usa para aliados
+    {
+        throw new System.NotImplementedException();
     }
 }

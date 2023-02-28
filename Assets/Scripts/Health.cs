@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Health : MonoBehaviour
+public abstract class Health : Prototype
 {
     public TypesOfEntitys typeOfEntity;
 
@@ -16,6 +16,7 @@ public abstract class Health : MonoBehaviour
 
     private void Start()
     {
+
         switch (typeOfEntity)
         {
             case TypesOfEntitys.Vacio:

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
+    SpriteRenderer sprite;
 
     public override void OnHitHandler(int damageDealt)
     {
@@ -15,7 +16,7 @@ public class EnemyHealth : Health
     {
         if (typeOfEntity == TypesOfEntitys.Blindado)
         {
-            //dividir
+            Clone().GetComponent<EnemyHealth>().typeOfEntity=TypesOfEntitys.Kamikaze;//actua como un kamikaze
         }
         base.OnDeadHandler();
     }
@@ -36,6 +37,11 @@ public class EnemyHealth : Health
             default:
                 break;
         }
+
+        if (sprite == null)
+            sprite = GetComponent<SpriteRenderer>();
+
+        this.NormalColor();
     }
 
     public static void TurnOn(EnemyHealth b)
@@ -47,5 +53,60 @@ public class EnemyHealth : Health
     public static void TurnOff(EnemyHealth b)
     {
         b.gameObject.SetActive(false);
+    }
+
+
+    protected override Prototype Clone()
+    {
+        EnemyHealth obj;
+        switch (typeOfEntity)
+        {
+            case TypesOfEntitys.Zombie:
+                obj = EntityFactory.Instance.poolZombie.GetObject().GetComponent<EnemyHealth>();
+                break;
+            case TypesOfEntitys.Kamikaze:
+                obj = EntityFactory.Instance.poolKamikaze.GetObject().GetComponent<EnemyHealth>();
+                break;
+            case TypesOfEntitys.Blindado:
+                obj = EntityFactory.Instance.poolBlindado.GetObject().GetComponent<EnemyHealth>();
+                break;
+            default://en caso de error, zombie
+                obj = EntityFactory.Instance.poolZombie.GetObject().GetComponent<EnemyHealth>();
+                break;
+        }
+        obj.RandomColor()
+            .SetPosition(transform.position.x+2,transform.position.y,transform.position.z);
+
+
+        return obj;
+    }
+
+
+    public EnemyHealth NormalColor()
+    {
+        Color color = Color.white;
+        color.a = 1;
+
+        sprite.color = color;
+
+
+        return this;
+    }
+
+    public EnemyHealth RandomColor()
+    {
+        Color color = Random.ColorHSV(0.4f, 0.8f);
+        color.a = 1;
+
+        sprite.color = color;
+
+
+        return this;
+    }
+    public EnemyHealth SetPosition(float x, float y, float z)
+    {
+        transform.position = new Vector3(x, y, z);
+
+        return this;
     }
 }

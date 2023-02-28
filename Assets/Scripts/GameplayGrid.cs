@@ -65,7 +65,7 @@ public class GameplayGrid : MonoBehaviour
         return array;
     }
 
-    public bool OnClick(Transform _transform)
+    public bool OnClick(GridButton button)
     {
         var cost = BuildingCost();
 
@@ -75,7 +75,6 @@ public class GameplayGrid : MonoBehaviour
 
             PlayerHealth obj = default;
 
-            //pool
             switch (buildings.buildingSelected)
             {
                 case TypesOfEntitys.Cultivo:
@@ -91,16 +90,16 @@ public class GameplayGrid : MonoBehaviour
                     obj = EntityFactory.Instance.poolExperto.GetObject();
                     break;
                 default:
+                    obj = EntityFactory.Instance.poolCultivo.GetObject();//en caso de error, selecciona cultivo
                     break;
             }
 
-            obj.transform.position = _transform.position;
-            obj.transform.rotation = _transform.rotation;
-            obj.transform.SetParent(_transform.parent);
-            //var obj = Instantiate(PrefabSelected(), _transform.position, _transform.rotation, _transform);
+            obj.button = button;
 
-            if (buildings.buildingSelected == TypesOfEntitys.Cultivo)
-                obj.GetComponent<Cultivo>().currencyManager = currencyManager;
+            obj.transform.position = button.transform.position;
+            obj.transform.rotation = button.transform.rotation;
+            obj.transform.SetParent(button.transform.parent);
+            //var obj = Instantiate(PrefabSelected(), _transform.position, _transform.rotation, _transform);
 
             return true;
         }
@@ -128,7 +127,7 @@ public class GameplayGrid : MonoBehaviour
 }
 public class Buildings
 {
-    public TypesOfEntitys buildingSelected;
+    public TypesOfEntitys buildingSelected= TypesOfEntitys.Cultivo;
 
     public Dictionary<TypesOfEntitys, GameObject> list = new Dictionary<TypesOfEntitys, GameObject>();
     public Dictionary<TypesOfEntitys, int> cost = new Dictionary<TypesOfEntitys, int>();
