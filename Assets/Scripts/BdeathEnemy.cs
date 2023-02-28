@@ -7,14 +7,16 @@ public enum EnemyStates{Walk, Atk, Death, Pause}
 public class BdeathEnemy : Enemies, IScreen
 {
     private FSM _FSM;
-    public Animator anim;
-    void Start()
+
+    protected override void Start()//asi detecta el start  de Enemies
     {
+        base.Start();
+
         _FSM = new FSM();
         _FSM.AddState(EnemyStates.Walk, new DeathWalk(_FSM, this));
         _FSM.AddState(EnemyStates.Atk, new DeathAtk(_FSM, this));
         _FSM.AddState(EnemyStates.Death, new DeathDead(_FSM, this));
-        _FSM.AddState(EnemyStates.Pause, new EnemyPause(_FSM, this, anim));
+        _FSM.AddState(EnemyStates.Pause, new EnemyPause(_FSM, this, animator));
         _FSM.ChangeState(EnemyStates.Walk);
         AddToListEntitySM();
 
@@ -28,7 +30,7 @@ public class BdeathEnemy : Enemies, IScreen
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Tower>() != null)
+        if (collision.GetComponent<PlayerHealth>() != null)
         {
             //atacar
         }

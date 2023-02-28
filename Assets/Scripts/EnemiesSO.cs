@@ -6,8 +6,6 @@ using UnityEngine;
 public class EnemiesSO : ScriptableObject
 {
     //BDeath
-    public int life;
-    public Vector3 velocity = new Vector2(-1,0);
-
+    public float velocity =1;
 
 }

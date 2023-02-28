@@ -16,3 +16,8 @@ public class FlyweightHealth
 {
     public int originalHealth;
 }
+public class FlyweightEnemies
+{
+    public float velocity=1;
+    public int damage=5;
+}

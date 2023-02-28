@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public Animator animator;
-    public EnemiesSO SO;
-    void Start()
+    protected Animator animator;
+    [HideInInspector]public FlyweightEnemies enemyType;
+
+    protected virtual void Start()
     {
-        
-        animator = GetComponent<Animator>(); //por que no asiga?
-    }
-    void Update()
-    {
-        
+        TypesOfEntitys type = GetComponent<EnemyHealth>().typeOfEntity;
+
+        switch (type)
+        {
+            case TypesOfEntitys.Zombie:
+                enemyType = FlyweightPointer.zombie;
+                break;
+            case TypesOfEntitys.Kamikaze:
+                enemyType = FlyweightPointer.kamikaze;
+                break;
+            case TypesOfEntitys.Blindado:
+                enemyType = FlyweightPointer.blindado;
+                break;
+            default:
+                break;
+        }
+
+        animator = GetComponent<Animator>();
     }
 }

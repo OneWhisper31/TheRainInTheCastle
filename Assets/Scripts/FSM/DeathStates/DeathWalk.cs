@@ -26,7 +26,7 @@ public class DeathWalk : IState
 
     public void OnUpdate()
     {
-        _enemy.transform.position += _enemy.SO.velocity * Time.deltaTime;
+        _enemy.transform.position += _enemy.enemyType.velocity*-Vector3.right * Time.deltaTime;
     }
      
    

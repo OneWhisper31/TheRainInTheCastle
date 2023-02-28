@@ -3260,6 +3260,8 @@ MonoBehaviour:
   piromanoPrefab: {fileID: 2055425760940743775, guid: 302659cc9ee3e25499a4c38ca6c9d305, type: 3}
   expertoPrefab: {fileID: 5739783286789374754, guid: 3f030626fbe1de142b760af9d77cdb17, type: 3}
   zombiePrefab: {fileID: 5040128501676178655, guid: 5bde8f839ffdf60458ca03ff82e9e7ed, type: 3}
+  kamikazePrefab: {fileID: 9202315776965995812, guid: a4fe83ab0375b494a8461161fa5c306f, type: 3}
+  blindadoPrefab: {fileID: 1115463402910960453, guid: 060cb638fcdd472459de5d733f176dd4, type: 3}
 --- !u!114 &1335235420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6352,8 +6354,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260b5f92c62eee2419acdef32a848b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy:
-  - {fileID: 5621958728751281890, guid: 5bde8f839ffdf60458ca03ff82e9e7ed, type: 3}
+  enemies:
+  - type: 5
+    percentageOfSpawn: 60
+  - type: 6
+    percentageOfSpawn: 20
+  - type: 7
+    percentageOfSpawn: 20
   dificult: 1
   amountEnemies: 05000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
   timeBetweenEnemies: 03000000030000000300000003000000020000000200000002000000020000000100000001000000

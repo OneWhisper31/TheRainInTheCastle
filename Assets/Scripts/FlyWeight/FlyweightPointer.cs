@@ -26,6 +26,22 @@ public class FlyweightPointer : MonoBehaviour
         bulletDamage = 15
     };
 
+    public static readonly FlyweightEnemies zombie = new FlyweightEnemies
+    {
+        velocity=1,
+        damage=5
+    };
+    public static readonly FlyweightEnemies kamikaze = new FlyweightEnemies
+    {
+        velocity = 2.5f,
+        damage = 20
+    };
+    public static readonly FlyweightEnemies blindado = new FlyweightEnemies
+    {
+        velocity = 0.5f,
+        damage = 10
+    };
+
     public static readonly FlyweightHealth cultivoHealth = new FlyweightHealth
     {
         originalHealth=20
@@ -48,10 +64,10 @@ public class FlyweightPointer : MonoBehaviour
     };
     public static readonly FlyweightHealth kamikazeHealth = new FlyweightHealth
     {
-        originalHealth = 20
+        originalHealth = 5
     };
     public static readonly FlyweightHealth blindadoHealth = new FlyweightHealth
     {
-        originalHealth = 20
+        originalHealth = 40
     };
 }

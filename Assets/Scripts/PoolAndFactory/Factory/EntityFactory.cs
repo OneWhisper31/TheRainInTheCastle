@@ -22,8 +22,8 @@ public class EntityFactory : MonoBehaviour
     [SerializeField] PlayerHealth piromanoPrefab;
     [SerializeField] PlayerHealth expertoPrefab;
     [SerializeField] EnemyHealth zombiePrefab;
-    //[SerializeField] EnemyHealth kamikazePrefab;
-    //[SerializeField] EnemyHealth blindadoPrefab;
+    [SerializeField] EnemyHealth kamikazePrefab;
+    [SerializeField] EnemyHealth blindadoPrefab;
 
 
     //objects pools
@@ -32,8 +32,8 @@ public class EntityFactory : MonoBehaviour
     public ObjectPool<PlayerHealth> poolPiromano;
     public ObjectPool<PlayerHealth> poolExperto ;
     public ObjectPool<EnemyHealth> poolZombie  ;
-    //public ObjectPool<EnemyHealth> poolKamikaze;
-    //public ObjectPool<EnemyHealth> poolBlindado;
+    public ObjectPool<EnemyHealth> poolKamikaze;
+    public ObjectPool<EnemyHealth> poolBlindado;
 
 
 
@@ -49,8 +49,8 @@ public class EntityFactory : MonoBehaviour
 
         //enemies
         poolZombie = new ObjectPool<EnemyHealth>(ZombieCreator, EnemyHealth.TurnOn, EnemyHealth.TurnOff, entityStock);
-        //poolKamikaze = new ObjectPool<EnemyHealth>(KamikazeCreator, EnemyHealth.TurnOn, EnemyHealth.TurnOff, entityStock);
-        //poolBlindado = new ObjectPool<EnemyHealth>(BlindadoCreator, EnemyHealth.TurnOn, EnemyHealth.TurnOff, entityStock);
+        poolKamikaze = new ObjectPool<EnemyHealth>(KamikazeCreator, EnemyHealth.TurnOn, EnemyHealth.TurnOff, entityStock);
+        poolBlindado = new ObjectPool<EnemyHealth>(BlindadoCreator, EnemyHealth.TurnOn, EnemyHealth.TurnOff, entityStock);
     }
 
     //allays
@@ -76,14 +76,14 @@ public class EntityFactory : MonoBehaviour
     {
         return Instantiate(zombiePrefab);
     }
-    //EnemyHealth KamikazeCreator()
-    //{
-    //    return Instantiate(kamikazePrefab);
-    //}
-    //EnemyHealth BlindadoCreator()
-    //{
-    //    return Instantiate(blindadoPrefab);
-    //}
+    EnemyHealth KamikazeCreator()
+    {
+        return Instantiate(kamikazePrefab);
+    }
+    EnemyHealth BlindadoCreator()
+    {
+        return Instantiate(blindadoPrefab);
+    }
 
     public void ReturnEntity(TypesOfEntitys type,Health b)
     {
@@ -104,12 +104,12 @@ public class EntityFactory : MonoBehaviour
             case TypesOfEntitys.Zombie:
                 poolZombie.ReturnObject((EnemyHealth)b);
                 break;
-            //case TypesOfEntitys.Kamikaze:
-            //    poolKamikaze.ReturnObject((EnemyHealth)b);
-            //    break;
-            //case TypesOfEntitys.Blindado:
-            //    poolBlindado.ReturnObject((EnemyHealth)b);
-            //    break;
+            case TypesOfEntitys.Kamikaze:
+                poolKamikaze.ReturnObject((EnemyHealth)b);
+                break;
+            case TypesOfEntitys.Blindado:
+                poolBlindado.ReturnObject((EnemyHealth)b);
+                break;
             default:
                 break;
         }

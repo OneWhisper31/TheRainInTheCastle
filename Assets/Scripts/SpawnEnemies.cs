@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour, IScreen
 {
-    [SerializeField] Enemies[] enemy;
+    [SerializeField] enemy[] enemies;
+
+    //[SerializeField] Enemies[] enemy;
     [SerializeField] int dificult;
     [SerializeField] int[] amountEnemies;
     [SerializeField] int[] timeBetweenEnemies;
@@ -45,35 +47,48 @@ public class SpawnEnemies : MonoBehaviour, IScreen
         {
             time = 0f;
 
-            //TypesOfEntitys contiene las entidades enumeradas y es la key para llamar al pool 5,6,7 son de zombies,
-            //y cada uno tiene su propia pool, por eso es recomendable q hagas un switch como t dejo abajo
-            //para que tengas en cuenta cuando hagas los otros enemigos
+            int totalpercentaje = 0;//usado para calcular la probabildad total
 
-            //int random = Random.Range(5, 8); // tipos de zombies, de ahi  
-            //
-            //switch ((TypesOfEntitys)random)
-            //{
-            //    case TypesOfEntitys.Zombie:
-            //        EntityFactory.Instance.poolZombie.GetObject();
-            //        break;
-            //    case TypesOfEntitys.Kamikaze:
-            //        EntityFactory.Instance.poolKamikaze.GetObject();
-            //        break;
-            //    case TypesOfEntitys.Blindado:
-            //        EntityFactory.Instance.poolBlindado.GetObject();
-            //        break;
-            //    default:
-            //        break;
-            //}
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                totalpercentaje+=enemies[i].percentageOfSpawn;//suma toda la probabildad
+            }
 
-            //las pools de kamikaze y blindado estan comentadas, tenes q descomentarlas para que no tire error je
+            int randomEntity = Random.Range(0, totalpercentaje);//tira numero al azar de todos las probabilidades
 
-            var obj = EntityFactory.Instance.poolZombie.GetObject();
+            int acummulatePercentaje = 0;//va chequeando uno por uno si entra en la probabilidad
+            EnemyHealth obj;//guarda el enemigo para trabajarlo
 
-            obj.transform.position = spawnsOfEnemies[Random.Range(0, 5)].transform.position;
-            obj.transform.rotation = transform.rotation;
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                acummulatePercentaje += enemies[i].percentageOfSpawn;//se prepara para chequear la siguiente probabilidad
 
-            //Instantiate(enemy[Random.Range(0, enemy.Length)], spawnsOfEnemies[Random.Range(0, 5)].transform.position, transform.rotation);
+                if (randomEntity <= acummulatePercentaje)//si esta dentro, que analice los tipos de zombie q tiene
+                {
+                    switch (enemies[i].type)
+                    {
+                        case TypesOfEntitys.Zombie:
+                            obj = EntityFactory.Instance.poolZombie.GetObject();
+                            break;
+                        case TypesOfEntitys.Kamikaze:
+                            obj = EntityFactory.Instance.poolKamikaze.GetObject();
+                            break;
+                        case TypesOfEntitys.Blindado:
+                            obj = EntityFactory.Instance.poolBlindado.GetObject();
+                            break;
+                        default:
+                            obj = EntityFactory.Instance.poolZombie.GetObject();
+                            //en caso de que se rompa por una mala seleccion del tipo, que genere uno normal
+                            break;
+                    }
+
+                    //asigna propiedades
+                    obj.transform.position = spawnsOfEnemies[Random.Range(0, 5)].transform.position;
+                    //obj.transform.rotation = transform.rotation;
+
+                    break;//rompe el bucle
+                }
+            }
         }
     }
 
@@ -91,4 +106,11 @@ public class SpawnEnemies : MonoBehaviour, IScreen
     {
         return;
     }
+}
+
+[System.Serializable]
+public struct enemy
+{
+    public TypesOfEntitys type;//usado para spawnear del pool
+    public int percentageOfSpawn;//porcentaje de spawneo
 }
