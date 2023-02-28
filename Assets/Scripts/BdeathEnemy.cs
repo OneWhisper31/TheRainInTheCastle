@@ -8,13 +8,17 @@ public class BdeathEnemy : Enemies, IScreen
 {
     private FSM _FSM;
 
+    [SerializeField]float cooldownHit;
+
+    PlayerHealth allayClose; public PlayerHealth allay { get { return allayClose; } }
+
     protected override void Start()//asi detecta el start  de Enemies
     {
         base.Start();
 
         _FSM = new FSM();
         _FSM.AddState(EnemyStates.Walk, new DeathWalk(_FSM, this));
-        _FSM.AddState(EnemyStates.Atk, new DeathAtk(_FSM, this));
+        _FSM.AddState(EnemyStates.Atk, new DeathAtk(_FSM, this, cooldownHit,GetComponent<EnemyHealth>().typeOfEntity));
         _FSM.AddState(EnemyStates.Death, new DeathDead(_FSM, this));
         _FSM.AddState(EnemyStates.Pause, new EnemyPause(_FSM, this, animator));
         _FSM.ChangeState(EnemyStates.Walk);
@@ -32,7 +36,16 @@ public class BdeathEnemy : Enemies, IScreen
     {
         if (collision.GetComponent<PlayerHealth>() != null)
         {
-            //atacar
+            _FSM.ChangeState(EnemyStates.Atk);
+            allayClose = collision.GetComponent<PlayerHealth>();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<PlayerHealth>() != null)
+        {
+            _FSM.ChangeState(EnemyStates.Walk);
+            allayClose = null;
         }
     }
 

@@ -22,8 +22,9 @@ public class Bullet : MonoBehaviour, IScreen
         if (otherHealthSystem!=null)
         {
             otherHealthSystem.OnHitHandler(damage);
+            BulletFactory.Instance.ReturnBullet(this);//pool
         }
-        BulletFactory.Instance.ReturnBullet(this);//pool
+        
     }
 
     private void Awake()
