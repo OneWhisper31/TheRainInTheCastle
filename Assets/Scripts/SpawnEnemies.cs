@@ -34,6 +34,7 @@ public class SpawnEnemies : MonoBehaviour, IScreen
 
     public void AddToListEntitySM() //Sumo la entidad al primer push
     {
+        if (SMEntity._entityList.Contains(this)) return;
         SMEntity._entityList.Add(this);
         Debug.Log("Sumo a la lista y hay " + SMEntity._entityList.Count);
     }

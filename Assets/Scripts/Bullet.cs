@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IScreen
 {
     //cambias cuando instancias
     [HideInInspector]public int damage = 5;
+
+    bool IsActive=true;
 
     [SerializeField] float velocity=10;
     Rigidbody2D rb;
@@ -24,12 +26,28 @@ public class Bullet : MonoBehaviour
         BulletFactory.Instance.ReturnBullet(this);//pool
     }
 
+    private void Awake()
+    {
+        AddToListEntitySM();
+    }
+
     private void Update()
     {
-        lifetime -= Time.deltaTime;
+        if(IsActive)
+        {
+            lifetime -= Time.deltaTime;
 
-        if(lifetime<=0)
-            BulletFactory.Instance.ReturnBullet(this);//pool
+            if(lifetime<=0)
+                BulletFactory.Instance.ReturnBullet(this);//pool
+        }    
+    }
+
+    public void AddToListEntitySM() //Sumo la entidad al primer push
+    {
+        if (SMEntity._entityList.Contains(this)) return;
+        
+        SMEntity._entityList.Add(this);
+        Debug.Log("Sumo a la lista y hay " + SMEntity._entityList.Count);
     }
 
     private void Reset()
@@ -49,5 +67,25 @@ public class Bullet : MonoBehaviour
     public static void TurnOff(Bullet b)
     {
         b.gameObject.SetActive(false);
+    }
+
+    public void Activate()
+    {
+        IsActive = true;
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+
+        rb.velocity = Vector2.right * velocity;
+    }
+
+    public void Deactivate()
+    {
+        IsActive = false;
+        rb.velocity = Vector2.zero;
+    }
+
+    public void Free()
+    {
+        return;
     }
 }

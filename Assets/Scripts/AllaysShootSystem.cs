@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AllaysShootSystem : MonoBehaviour
+public class AllaysShootSystem : MonoBehaviour, IScreen
 {
     [SerializeField] LayerMask enemyMask;
     public GameObject bulletPrefab;
 
     float currentCooldown;
     FlyweightAllays allay;
+    Animator animator;
+    bool IsActive=true;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
+        AddToListEntitySM();
 
         switch (GetComponent<PlayerHealth>().typeOfEntity)
         {
@@ -32,7 +36,7 @@ public class AllaysShootSystem : MonoBehaviour
 
     void Update()
     {
-        if (currentCooldown > 0)
+        if (currentCooldown > 0&&IsActive)
         {
             currentCooldown -= Time.deltaTime;
             return;
@@ -47,5 +51,30 @@ public class AllaysShootSystem : MonoBehaviour
             obj.GetComponent<Bullet>().damage = allay.bulletDamage;
             currentCooldown = allay.cooldown;
         }
+    }
+
+    public void Activate()
+    {
+        animator.speed = 1;
+        IsActive = true;
+
+    }
+
+    public void Deactivate()
+    {
+        animator.speed = 0;
+        IsActive = false;
+    }
+
+    public void Free()
+    {
+       
+    }
+
+    public void AddToListEntitySM() //Sumo la entidad al primer push
+    {
+        if (SMEntity._entityList.Contains(this)) return;
+        SMEntity._entityList.Add(this);
+        Debug.Log("Sumo a la lista y hay " + SMEntity._entityList.Count);
     }
 }

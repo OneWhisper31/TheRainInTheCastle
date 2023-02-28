@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cultivo : MonoBehaviour
+public class Cultivo : MonoBehaviour, IScreen
 {
     public CurrencyManager currencyManager;
 
@@ -24,5 +24,20 @@ public class Cultivo : MonoBehaviour
 
             obj.GetComponent<CurrencyPopUp>().currencyManager = currencyManager;
         }
+    }
+
+    public void Activate()
+    {
+        
+    }
+
+    public void Deactivate()
+    {
+       
+    }
+
+    public void Free()
+    {
+       
     }
 }
