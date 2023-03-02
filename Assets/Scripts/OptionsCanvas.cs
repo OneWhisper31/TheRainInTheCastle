@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OptionsCanvas : MonoBehaviour
 {
@@ -45,6 +46,11 @@ public class OptionsCanvas : MonoBehaviour
     public void SliderVolumen()
     {
         AudioManager._audioM.VolumenOnChange(_slider.value);
+    }
+
+    public void GoToMenu() //Boton de Menu
+    {
+        SceneManager.LoadScene("Menu");
     }
 
 }
