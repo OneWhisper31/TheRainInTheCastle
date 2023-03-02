@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AllaysShootSystem : MonoBehaviour, IScreen
 {
+    [SerializeField] TypesOfBullet typeOfBullets;
     [SerializeField] LayerMask enemyMask;
     public GameObject bulletPrefab;
     AudioSource _shot;
-
     float currentCooldown;
     FlyweightAllays allay;
     Animator animator;
@@ -53,7 +53,19 @@ public class AllaysShootSystem : MonoBehaviour, IScreen
             var obj = BulletFactory.Instance.pool.GetObject();
             obj.transform.position=transform.position;
 
-            obj.GetComponent<Bullet>().damage = allay.bulletDamage;
+            var bullet= obj.GetComponent<Bullet>();
+            bullet.damage = allay.bulletDamage;
+
+            for (int i = 0; i < BulletFactory.Instance.bulletSprite.Length; i++)
+            {
+                if (BulletFactory.Instance.bulletSprite[i].type == typeOfBullets)
+                {
+                    obj.GetComponent<SpriteRenderer>().color = BulletFactory.Instance.bulletSprite[i].sprite;
+                    obj.GetComponent<Rigidbody2D>().velocity= Vector2.right * BulletFactory.Instance.bulletSprite[i].velocity;
+                }
+            }
+
+
             currentCooldown = allay.cooldown;
             _shot.Play();
         }

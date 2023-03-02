@@ -10039,6 +10039,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 2272160610528488934, guid: ec13c123222be5d4dbb2067fcde0cb91, type: 3}
+  bulletSprite:
+  - type: 0
+    sprite: {r: 0.8509804, g: 0.75686276, b: 0.4509804, a: 1}
+    velocity: 5
+  - type: 1
+    sprite: {r: 0.745283, g: 0.045701336, b: 0.045701336, a: 1}
+    velocity: 25
+  - type: 2
+    sprite: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    velocity: 4
   _bulletStock: 10
 --- !u!114 &1335235419
 MonoBehaviour:

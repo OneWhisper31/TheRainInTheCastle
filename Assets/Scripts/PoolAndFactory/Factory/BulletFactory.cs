@@ -14,6 +14,7 @@ public class BulletFactory : MonoBehaviour
     static BulletFactory _instance;
 
     [SerializeField] Bullet _bulletPrefab;
+    public BulletSprite[] bulletSprite;
 
     [SerializeField] int _bulletStock = 10;
 
@@ -36,4 +37,18 @@ public class BulletFactory : MonoBehaviour
     {
         pool.ReturnObject(b);
     }
+}
+
+[System.Serializable]
+public struct BulletSprite
+{
+    public TypesOfBullet type;//tipo de bala
+    public Color sprite;//color de la bala
+    public float velocity;
+}
+public enum TypesOfBullet
+{
+    Arquero,
+    Piromano,
+    Experto
 }
