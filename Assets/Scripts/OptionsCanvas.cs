@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionsCanvas : MonoBehaviour
 {
     public GameObject _OptionsCanvasGO;
     IScreen _OptionsCanvas;
     bool IsPause = false;
+    public Slider _slider;
 
 
     private void Start()
@@ -40,6 +42,9 @@ public class OptionsCanvas : MonoBehaviour
         }
     }
 
-    
+    public void SliderVolumen()
+    {
+        AudioManager._audioM.VolumenOnChange(_slider.value);
+    }
 
 }

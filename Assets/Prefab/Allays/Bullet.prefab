@@ -145,5 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
+  _impact: {fileID: 2488040554755877420, guid: 4d3544d5acd4db3408665f805b705d30, type: 3}
   velocity: 20
   lifetime: 15

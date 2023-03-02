@@ -5,11 +5,13 @@ using UnityEngine;
 public class CurrencyPopUp : MonoBehaviour
 {
     public CurrencyManager currencyManager;
+    public GameObject _soundPeek;
 
     public int onCurrencyAdd;
 
     public void OnClick()
     {
+        Destroy(Instantiate(_soundPeek), 1);
         currencyManager.Currency += onCurrencyAdd;
 
         StopAllCoroutines();

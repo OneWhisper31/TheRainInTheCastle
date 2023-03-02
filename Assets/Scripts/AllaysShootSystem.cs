@@ -6,6 +6,7 @@ public class AllaysShootSystem : MonoBehaviour, IScreen
 {
     [SerializeField] LayerMask enemyMask;
     public GameObject bulletPrefab;
+    AudioSource _shot;
 
     float currentCooldown;
     FlyweightAllays allay;
@@ -15,6 +16,10 @@ public class AllaysShootSystem : MonoBehaviour, IScreen
     private void Start()
     {
         animator = GetComponent<Animator>();
+        AudioManager._audioM.NewAudioSourceInScene(this.gameObject);
+        _shot = GetComponent<AudioSource>();
+        _shot.Stop();
+
         AddToListEntitySM();
 
         switch (GetComponent<PlayerHealth>().typeOfEntity)
@@ -36,7 +41,7 @@ public class AllaysShootSystem : MonoBehaviour, IScreen
 
     void Update()
     {
-        if (currentCooldown > 0&&IsActive)
+        if (currentCooldown > 0 && IsActive) 
         {
             currentCooldown -= Time.deltaTime;
             return;
@@ -50,6 +55,7 @@ public class AllaysShootSystem : MonoBehaviour, IScreen
 
             obj.GetComponent<Bullet>().damage = allay.bulletDamage;
             currentCooldown = allay.cooldown;
+            _shot.Play();
         }
     }
 

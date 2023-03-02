@@ -72,4 +72,6 @@ public class BdeathEnemy : Enemies, IScreen
         EntityFactory.Instance.ReturnEntity(health.typeOfEntity, health);
         //Destroy(this);
     }
+
+   
 }

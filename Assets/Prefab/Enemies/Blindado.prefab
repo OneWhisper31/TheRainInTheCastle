@@ -238,3 +238,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfEntity: 7
   health: 20
+  _explosion: {fileID: 4026696892166782694, guid: 4b3ae4ff777f77d4e9ae3bc8c270e790, type: 3}

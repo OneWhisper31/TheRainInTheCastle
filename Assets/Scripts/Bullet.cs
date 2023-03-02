@@ -8,28 +8,16 @@ public class Bullet : MonoBehaviour, IScreen
     [HideInInspector]public int damage = 5;
 
     bool IsActive=true;
+    public GameObject _impact;
 
     [SerializeField] float velocity=10;
     Rigidbody2D rb;
 
     [SerializeField]float lifetime=15;
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-
-        var otherHealthSystem = other.GetComponent<EnemyHealth>();
-
-        if (otherHealthSystem!=null)
-        {
-            otherHealthSystem.OnHitHandler(damage);
-            BulletFactory.Instance.ReturnBullet(this);//pool
-        }
-        
-    }
-
     private void Awake()
     {
         AddToListEntitySM();
+        AudioManager._audioM.NewAudioSourceInScene(this.gameObject);
     }
 
     private void Update()
@@ -41,6 +29,18 @@ public class Bullet : MonoBehaviour, IScreen
             if(lifetime<=0)
                 BulletFactory.Instance.ReturnBullet(this);//pool
         }    
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) //colision
+    {
+        var otherHealthSystem = other.GetComponent<EnemyHealth>();
+
+        if (otherHealthSystem!=null)
+        {
+            otherHealthSystem.OnHitHandler(damage);
+            BulletFactory.Instance.ReturnBullet(this);//pool
+            Destroy(Instantiate(_impact), 2);
+        }
     }
 
     public void AddToListEntitySM() //Sumo la entidad al primer push

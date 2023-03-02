@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.12941177}
+  m_Color: {r: 0.6415094, g: 0.55946195, b: 0.4206123, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -146,5 +146,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayGrid: {fileID: 0}
-  usedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.25490198}
-  used: 0
+  usedColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0}

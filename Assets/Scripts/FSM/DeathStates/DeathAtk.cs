@@ -54,6 +54,7 @@ public class DeathAtk : IState
             playerHealth.OnHitHandler(damage);
             if (_type == TypesOfEntitys.Kamikaze)
                 _enemy.GetComponent<EnemyHealth>().OnHitHandler((int)Mathf.Floor(Mathf.Infinity));//suicidio
+
         }
         else
             currentCooldown -= Time.deltaTime;

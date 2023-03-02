@@ -104,7 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfEntity: 1
-  health: 20
+  health: 5
+  button: {fileID: 0}
 --- !u!61 &6721169137483295390
 BoxCollider2D:
   m_ObjectHideFlags: 0

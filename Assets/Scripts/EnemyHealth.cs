@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHealth : Health
 {
     SpriteRenderer sprite;
+    public GameObject _explosion;
+
 
     public override void OnHitHandler(int damageDealt)
     {
@@ -18,6 +20,7 @@ public class EnemyHealth : Health
         {
             Clone().GetComponent<EnemyHealth>().typeOfEntity=TypesOfEntitys.Kamikaze;//actua como un kamikaze
         }
+        SpawnSoundAndFX();
         base.OnDeadHandler();
     }
 
@@ -108,5 +111,10 @@ public class EnemyHealth : Health
         transform.position = new Vector3(x, y, z);
 
         return this;
+    }
+
+    void SpawnSoundAndFX()
+    {
+        Destroy(Instantiate(_explosion, transform.position, transform.rotation), 1);
     }
 }

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GameplayGrid : MonoBehaviour
 {
-    CurrencyManager currencyManager;
+    public CurrencyManager currencyManager;
 
     public int xSize, ySize;
     public GameObject gridButtonPrefab;
+
+    [Header("Sonidos")]
+    public GameObject _soundNegative, _SoundPeek;
 
     [Header("Prefab Tropas")]
     public GameObject cultivo;
@@ -100,12 +103,13 @@ public class GameplayGrid : MonoBehaviour
             obj.transform.rotation = button.transform.rotation;
             obj.transform.SetParent(button.transform.parent);
             //var obj = Instantiate(PrefabSelected(), _transform.position, _transform.rotation, _transform);
-
+            Destroy(Instantiate(_SoundPeek), 1);
             return true;
         }
         else
         {
             //sonido de rechazo
+            Destroy(Instantiate(_soundNegative), 1);
             return false;
         }
     }

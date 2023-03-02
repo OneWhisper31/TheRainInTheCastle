@@ -49,7 +49,7 @@ public class OnWinLoseManager : MonoBehaviour, IScreen
 
         if (other.gameObject.layer != enemyLayer)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             onLose.Invoke();
         }
     }
