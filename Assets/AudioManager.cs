@@ -34,7 +34,9 @@ public class AudioManager : MonoBehaviour
         volumenValue = volumen;
         foreach (var item in audioList)
         {
-            item.volume = volumenValue;
+            if (item == null) return;
+            if (item.GetComponent<AudioSource>() == null) return;
+                     item.volume = volumenValue;
         }
     }
 
