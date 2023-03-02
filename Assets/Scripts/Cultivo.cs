@@ -35,7 +35,7 @@ public class Cultivo : MonoBehaviour, IScreen
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(5, 10f));
+            yield return new WaitForSeconds(Random.Range(10f, 25f));
 
             var obj= PopupFactory.Instance.pool.GetObject();
 

@@ -29,7 +29,9 @@ public class CurrencyPopUp : MonoBehaviour
 
     private void Reset()
     {
-        StopAllCoroutines();
+        if(gameObject.activeInHierarchy==false)
+            gameObject.SetActive(true);
+
         StartCoroutine(Dissapear());
     }
 
@@ -41,6 +43,7 @@ public class CurrencyPopUp : MonoBehaviour
 
     public static void TurnOff(CurrencyPopUp b)
     {
+        b.StopAllCoroutines();
         b.gameObject.SetActive(false);
     }
 }

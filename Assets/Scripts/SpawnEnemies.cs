@@ -83,8 +83,7 @@ public class SpawnEnemies : MonoBehaviour, IScreen
                     }
 
                     //asigna propiedades
-                    obj.transform.position = spawnsOfEnemies[Random.Range(0, 5)].transform.position;
-                    //obj.transform.rotation = transform.rotation;
+                    obj.transform.position = spawnsOfEnemies[Random.Range(0, spawnsOfEnemies.Length)].transform.position;
 
                     break;//rompe el bucle
                 }

@@ -38,12 +38,14 @@ public class DeathAtk : IState
     }
     public void OnExit()
     {
-        currentCooldown = 0;
     }
 
     public void OnStart()
     {
-        
+        if(_type==TypesOfEntitys.Kamikaze)
+            currentCooldown = 0;
+        else
+            currentCooldown = cooldown;
     }
 
     public void OnUpdate()

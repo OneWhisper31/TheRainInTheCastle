@@ -44,7 +44,7 @@ public class FlyweightPointer : MonoBehaviour
 
     public static readonly FlyweightHealth cultivoHealth = new FlyweightHealth
     {
-        originalHealth=20
+        originalHealth=10
     };
     public static readonly FlyweightHealth arqueroHealth = new FlyweightHealth
     {
@@ -56,11 +56,11 @@ public class FlyweightPointer : MonoBehaviour
     };
     public static readonly FlyweightHealth expertoHealth = new FlyweightHealth
     {
-        originalHealth = 20
+        originalHealth = 40
     };
     public static readonly FlyweightHealth zombieHealth = new FlyweightHealth
     {
-        originalHealth = 20
+        originalHealth = 25
     };
     public static readonly FlyweightHealth kamikazeHealth = new FlyweightHealth
     {

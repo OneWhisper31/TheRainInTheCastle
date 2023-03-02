@@ -14,10 +14,13 @@ public class Bullet : MonoBehaviour, IScreen
     Rigidbody2D rb;
 
     [SerializeField]float lifetime=15;
+    float initialLifetime;
+
     private void Awake()
     {
         AddToListEntitySM();
         AudioManager._audioM.NewAudioSourceInScene(this.gameObject);
+        initialLifetime = lifetime;
     }
 
     private void Update()
@@ -28,7 +31,7 @@ public class Bullet : MonoBehaviour, IScreen
 
             if(lifetime<=0)
                 BulletFactory.Instance.ReturnBullet(this);//pool
-        }    
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) //colision
@@ -56,6 +59,7 @@ public class Bullet : MonoBehaviour, IScreen
         if (rb == null)
             rb = GetComponent<Rigidbody2D>();
 
+        lifetime = initialLifetime;
         rb.velocity = Vector2.right * velocity;
     }
 
