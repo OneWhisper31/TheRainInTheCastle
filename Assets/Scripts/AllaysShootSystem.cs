@@ -48,7 +48,7 @@ public class AllaysShootSystem : MonoBehaviour, IScreen
         }
         
 
-        if (Physics2D.Raycast(transform.position + allay.allayMinDistance * transform.right, transform.right, allay.allayMaxDistance, enemyMask))
+        if (Physics2D.Raycast(transform.position + allay.allayMinDistance * transform.right, transform.right, allay.allayMaxDistance, enemyMask)&&IsActive)
         {
             var obj = BulletFactory.Instance.pool.GetObject();
             obj.transform.position=transform.position;
