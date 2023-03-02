@@ -17,11 +17,13 @@ public class EnemyPause : IState
 
     public void OnExit()
     {
-        _anim.speed = 1;
+        if (_anim == null) return;
+       _anim.speed = 1;
     }
 
     public void OnStart()
     {
+        if (_anim == null) return;
         _anim.speed = 0;
     }
 
