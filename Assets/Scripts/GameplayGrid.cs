@@ -145,6 +145,6 @@ public class Buildings
         cost.Add(TypesOfEntitys.Cultivo, 20);
         cost.Add(TypesOfEntitys.Arquero, 50);
         cost.Add(TypesOfEntitys.Piromano, 40);
-        cost.Add(TypesOfEntitys.Experto, 100);
+        cost.Add(TypesOfEntitys.Experto, 150);
     }
 }
