@@ -73,6 +73,7 @@ public class AllaysShootSystem : MonoBehaviour, IScreen
 
     public void Activate()
     {
+        if (animator == null) return;
         animator.speed = 1;
         IsActive = true;
 
@@ -80,6 +81,7 @@ public class AllaysShootSystem : MonoBehaviour, IScreen
 
     public void Deactivate()
     {
+        if (animator == null) return;
         animator.speed = 0;
         IsActive = false;
     }
